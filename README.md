@@ -10,8 +10,8 @@ about/index.html              关于我们、价值观、企业信息
 technology/index.html         技术方向与研发理念
 insights/index.html           行业洞察列表（归档日期倒序）
 insights/*/index.html         7 篇光学行业文章
-news/index.html               公司新闻列表（示例内容）
-news/*/index.html             9 篇员工动态示例
+news/index.html               公司新闻列表（员工动态）
+news/*/index.html             9 篇员工动态
 assets/css/editorial.css      列表、卡片和文章阅读样式
 assets/images/industry/       行业文章 WebP 配图
 assets/images/insights-hero.webp 行业洞察栏目背景
@@ -59,7 +59,7 @@ python3 -m http.server 8000 --bind 127.0.0.1
 
 后续向 `main` 提交文件会触发更新，无需运行构建命令或安装 npm 依赖。
 
-**发布配置（2026-11-27）：** 网站代码已通过连接的 GitHub 插件提交到现有仓库 `main`。Pages 已通过 GitHub 官方 CLI 配置为 `main / (root)`，默认域名启用 HTTPS。首次构建成功，三个页面与全部 CSS、JavaScript、图片、favicon、robots.txt、sitemap.xml 在线返回 HTTP 200，内容与本地版本逐字节一致；线上移动导航和控制台检查通过。代码上传、Pages 发布、DNS 生效为三个独立步骤，不可互相替代。之后用户已将自定义域名设为 `yingfeituoke.com`，仓库现有 `CNAME` 已保留。本次栏目更新沿用 `main / (root)`，不修改域名、DNS、HTTPS 或部署设置。2026-11-27 更新前查询域名仍返回 NXDOMAIN；Pages 构建状态与域名公网可访问性需要分别核实。
+**发布配置（2026-11-27）：** 网站代码已通过连接的 GitHub 插件提交到现有仓库 `main`。Pages 已通过 GitHub 官方 CLI 配置为 `main / (root)`，默认域名启用 HTTPS。首次构建成功，三个页面与全部 CSS、JavaScript、图片、favicon、robots.txt、sitemap.xml 在线返回 HTTP 200，内容与本地版本逐字节一致；线上移动导航和控制台检查通过。代码上传、Pages 发布、DNS 生效为三个独立步骤，不可互相替代。首版栏目更新时保留了当时的自定义域名。此后网站负责人删除了 `CNAME`，当前使用 GitHub Pages 默认项目地址；本次新闻改写保留最新仓库状态，沿用 `main / (root)`，不修改域名、DNS、HTTPS 或部署设置。2026-11-27 更新前查询域名仍返回 NXDOMAIN；Pages 构建状态与域名公网可访问性需要分别核实。
 
 ## yingfeituoke.com 与阿里云 DNS
 
@@ -126,8 +126,8 @@ IPv6 可选；不配置不会妨碍网站使用。如已有 `@` 的 AAAA 指向�
 - 行业文稿来自《迎飞拓科_行业博客7篇.md》，每篇正文 6 段，保留原文及段落；文章目录、关键词和编辑说明不作为正文发布。
 - 文章详情页显示“归档日期”和“发布日期”。归档日期来自文稿，仅用于栏目排序；首次部署日期为 **2026-11-27**，`BlogPosting.datePublished` 使用该真实部署日期。日后修改文章只更新 `dateModified`，不随意更改首发日期。
 - 行业列表按归档日期倒序，首页使用最近 3 篇。相邻文章中“上一篇”指较早归档文章，“下一篇”指较晚归档文章；首尾显示边界说明，不制造无效链接。
-- 员工新闻来自《迎飞拓科_员工新闻9篇_示例稿.md》，每篇 2 段；按原稿顺序展示，不编造历史新闻日期。
-- 首页新闻入口、新闻列表及每个详情页都有“示例内容”标识。人物、事件和奖励金额均为虚构示例；新闻页面不输出 `NewsArticle` 等真实新闻结构化数据。新闻标题与 meta description 同样包含示例提示。
+- 员工新闻以提供的《迎飞拓科_员工新闻9篇_示例稿.md》为基础。2026-11-27，网站负责人明确确认九篇中的人物、活动和奖励均真实发生，并授权按这些事实改写发布。当前版本保留已确认信息，重新编写标题、摘要与正文；按原有顺序展示。
+- 新闻首页入口、列表、详情、页面标题及分享描述已移除示例提示。活动具体日期尚未提供，因此不新增历史日期、现场引语、参与人数或地点细节；新闻页面暂不输出 `NewsArticle` 结构化数据。后续更新以网站负责人提供并确认的事实为准。
 - 修改文章时直接编辑对应 HTML；摘要同时用于列表卡片、meta description 与行业文章结构化数据，修改时保持一致。修改标题后也需同步相邻文章链接文本。新建文章时同步列表、导航与 `sitemap.xml`。
 - 所有页面保留原有电话、自动版权年份、键盘焦点、跳至正文链接与减少动画设置。顶部导航和页脚均包含五个栏目。
 
@@ -142,15 +142,15 @@ IPv6 可选；不配置不会妨碍网站使用。如已有 `@` 的 AAAA 指向�
 | 行业洞察 | `insights/visible-and-infrared-imaging/` | 可见光与红外成像 |
 | 行业洞察 | `insights/computational-imaging/` | 计算成像 |
 | 行业洞察 | `insights/integrated-optical-sensing/` | 光学感知与空间信息融合 |
-| 公司新闻 | `news/lost-wallet/` | 拾金不昧（示例） |
-| 公司新闻 | `news/better-archives/` | 合理化建议（示例） |
-| 公司新闻 | `news/careful-review/` | 认真核对（示例） |
-| 公司新闻 | `news/optics-sharing/` | 光学知识交流（示例） |
-| 公司新闻 | `news/new-colleague-exchange/` | 新员工交流（示例） |
-| 公司新闻 | `news/fire-safety/` | 消防培训（示例） |
-| 公司新闻 | `news/autumn-outing/` | 秋季团建（示例） |
-| 公司新闻 | `news/birthday-gathering/` | 员工生日会（示例） |
-| 公司新闻 | `news/badminton-friendly/` | 羽毛球友谊赛（示例） |
+| 公司新闻 | `news/lost-wallet/` | 拾金不昧 |
+| 公司新闻 | `news/better-archives/` | 合理化建议 |
+| 公司新闻 | `news/careful-review/` | 认真核对 |
+| 公司新闻 | `news/optics-sharing/` | 光学知识交流 |
+| 公司新闻 | `news/new-colleague-exchange/` | 新员工交流 |
+| 公司新闻 | `news/fire-safety/` | 消防培训 |
+| 公司新闻 | `news/autumn-outing/` | 秋季团建 |
+| 公司新闻 | `news/birthday-gathering/` | 员工生日会 |
+| 公司新闻 | `news/badminton-friendly/` | 羽毛球友谊赛 |
 
 ### 图片与原图
 
@@ -164,9 +164,21 @@ PNG 原图在 `assets/images/originals/` 下保留，文件名与 WebP 对应，
 
 - 本地 21 个页面与关联静态资源共 61 个 URL 均返回 HTTP 200。
 - 核对 473 处相对链接及资源引用；分别按域名根目录和 GitHub Pages 项目子路径解析，均可定位对应文件。
-- 7 篇行业文章的 42 个正文段落、9 篇示例新闻的 18 个正文段落与提供文稿逐段一致。
+- 7 篇行业文章的 42 个正文段落与提供文稿逐段一致。九篇员工新闻在负责人确认事件真实后完成改写，原文保存在本地素材目录中。
 - 原首页主视觉文案、关于我们及技术发展正文、公共交互脚本保留；9 张 PNG 与素材原件逐字节一致。
 - 所有 21 页在 320px 手机宽度下无横向溢出；另检查 390px 手机、768px 平板、1440px 桌面布局。
 - 浏览器验证移动菜单 Enter/Space 展开、Esc 收起并恢复焦点，以及新闻返回、文章上一篇/下一篇、图片延迟加载；控制台未见错误。
 - sitemap 含全部 21 页，各页单一 h1、独立标题和描述、五项导航及当前栏目状态已核对。
 - 上传后还需结合当次 Actions 部署状态核验公开访问；自定义域名的 DNS 故障与代码检查结果分别报告。
+
+### 新闻文字更新
+
+九篇新闻分别围绕身边小事、工作改进、工作日常、技术交流、同事成长、安全日常、团队生活与运动时光展开。减少统一的活动通稿句式，保留已确认的人物与奖励金额，通过具体动作和自然段落体现日常交流。未增加未经提供的获奖、合作、经营或研发成果。
+
+写作参考仅用于观察企业官网的叙述方式，不作为迎飞拓科事件的事实来源，不移植其他公司的活动、制度和人物经历：
+
+- [舜宇：2021届承晖大学生座谈会](https://www.sunnyoptical.com/sunnyoptical/en/4810.html)
+- [海康威视：员工故事](https://campushr.hikvision.com/)
+- [新华三：品牌故事](https://www.h3c.com/cn/pub/minisite/202409/m_story/)
+
+新闻改写检查：主页入口、新闻列表与九个详情页均已移除旧提示，包括 title、meta description、Open Graph 和无障碍标签。11 个相关页面在 320px 下无横向溢出，390px 与 1440px 视觉检查通过；移动导航、返回入口及控制台检查通过。人物、奖励金额和活动内容与负责人确认的基础信息核对，原有文章路径、行业洞察内容和公共交互脚本保持不变。
