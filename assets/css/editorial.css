@@ -56,8 +56,8 @@
   object-fit: cover;
 }
 .card-copy { padding-top: 23px; }
-.archive-date { font-size: 13px; color: var(--muted); }
-.archive-date time { margin-left: 7px; }
+.publication-date { font-size: 13px; color: var(--muted); }
+.publication-date time { margin-left: 7px; }
 .insight-card h2, .insight-card h3 {
   margin-top: 12px;
   font-size: 22px;
@@ -117,7 +117,9 @@
   border-bottom: 1px solid var(--line);
 }
 .news-item-label { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding-top: 3px; }
-.news-item-label > span:last-child { font-size: 14px; color: var(--muted); }
+.news-item-label > span { font-size: 14px; color: var(--muted); }
+.news-item-label .publication-date { display: flex; flex-direction: column; gap: 3px; line-height: 1.7; }
+.news-item-label .publication-date time { margin-left: 0; white-space: nowrap; }
 .news-item h2 { font-size: 24px; font-weight: 400; line-height: 1.65; }
 .news-item-content > p { max-width: 900px; margin-top: 14px; font-size: 16px; color: var(--muted); }
 .news-item .reading-link { margin-top: 12px; }
@@ -156,7 +158,7 @@
   .insights-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .home-insights-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
   .compact-card h3 { font-size: 18px; }
-  .compact-card .archive-date time { display: block; margin-left: 0; }
+  .compact-card .publication-date time { display: block; margin-left: 0; }
   .column-hero-content > p:last-child { max-width: 350px; }
   .news-item { grid-template-columns: 120px minmax(0, 1fr); gap: 28px; }
 }
@@ -179,13 +181,14 @@
   .compact-card .card-image-link { height: fit-content; }
   .compact-card .card-copy { padding-top: 0; }
   .compact-card h3 { font-size: 17px; margin-top: 7px; }
-  .compact-card .archive-date { font-size: 12px; }
-  .compact-card .archive-date time { display: block; margin-left: 0; }
+  .compact-card .publication-date { font-size: 12px; }
+  .compact-card .publication-date time { display: block; margin-left: 0; }
   .compact-card .reading-link { margin-top: 5px; font-size: 14px; }
   .home-news-entry { display: block; margin-top: 30px; padding-top: 28px; }
   .home-news-entry .button { margin-top: 22px; }
   .news-item { display: block; padding-block: 27px; }
-  .news-item-label { flex-direction: row; align-items: center; gap: 14px; margin-bottom: 15px; }
+  .news-item-label { flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 14px; margin-bottom: 15px; }
+  .news-item-label .publication-date { flex-direction: row; flex-wrap: wrap; gap: 3px 8px; }
   .news-item h2 { font-size: 22px; }
   .article-header { padding-top: 24px; padding-bottom: 28px; }
   .article-category { margin-top: 27px; }
