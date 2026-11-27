@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://baiyuchen0422-jason.github.io/yingfeituoke-website/sitemap.xml
